@@ -13,14 +13,14 @@
     <title>部门详情</title>
 </head>
 <body>
-<%
+<%--<%
     Dept d = (Dept) request.getAttribute("dept");
-%>
+%>--%>
     <h1>部门详情</h1>
     <hr>
-    部门编号:<%=d.getDeptno()%><br>
-    部门名称:<%=d.getDname()%><br>
-    部门位置:<%=d.getLoc()%><br>
+    部门编号:${dept.deptno}<br>
+    部门名称:${dept.dname}<br>
+    部门位置:${dept.loc}<br>
 
     <input type="button" value="后退" onclick="window.history.back()" />
 </body>

@@ -25,12 +25,14 @@ public class WelcomeServlet extends HttpServlet {
         Cookie[] cookies = request.getCookies();
         String username = null;
         String password = null;
-        for(Cookie cookie : cookies){
-            String name = cookie.getName();
-            if("username".equals(name)){
-                username = cookie.getValue();
-            }else if("password".equals(name)){
-                password = cookie.getValue();
+        if (cookies != null) {
+            for(Cookie cookie : cookies){
+                String name = cookie.getName();
+                if("username".equals(name)){
+                    username = cookie.getValue();
+                }else if("password".equals(name)){
+                    password = cookie.getValue();
+                }
             }
         }
         if(username != null && password != null){
