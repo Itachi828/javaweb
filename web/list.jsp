@@ -15,7 +15,10 @@
 <head>
     <meta charset="UTF-8">
     <title>部门列表</title>
-<%--    设置整个页面的基础路径--%>
+<%--    采用base标签：设置整个页面的基础路径--%>
+   <base href="http://localhost:8080/javaweb/">
+<%--    使用下面的获取不到seesion--%>
+<%--   <base href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}/${pageContext.request.contextPath}/">--%>
 </head>
 <body>
     <script type="text/javascript">
@@ -29,7 +32,7 @@
     <h1 align="center">部门列表</h1>
     <h2>${username}</h2>
     <hr>
-    <a href="<%=request.getContextPath()%>/user/exit">退出系统</a>
+    <a href="user/exit">退出系统</a>
     <table border="1xp" width="50%" align="center">
         <tr align="center">
             <th>序号</th>
@@ -50,13 +53,13 @@
             <td>${dept.dname}</td>
             <td>
                 <a href="javascript:void(0)" onclick="del(${dept.deptno})">删除</a>
-                <a href="<%=request.getContextPath()%>/dept/detail?f=edit&dno=${dept.deptno}">修改</a>
-                <a href="<%=request.getContextPath()%>/dept/detail?f=detail&dno=${dept.deptno}">详细信息</a>
+                <a href="dept/detail?f=edit&dno=${dept.deptno}">修改</a>
+                <a href="dept/detail?f=detail&dno=${dept.deptno}">详细信息</a>
             </td>
         </tr>
         </c:forEach>
 
     </table>
-    <a href="${pageContext.request.contextPath}/add.jsp">新增部门</a>
+    <a href="add.jsp">新增部门</a>
 </body>
 </html>
